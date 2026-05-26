@@ -1,28 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "public",
-  "routes": [
-    {
-      "src": "^/reader$",
-      "status": 308,
-      "headers": {
-        "Location": "/reader/"
-      }
-    },
-    {
-      "src": "^/reader/(.*)$",
-      "dest": "https://md-reader-pro.vercel.app/$1"
-    },
-    {
-      "src": "^/blog$",
-      "status": 308,
-      "headers": {
-        "Location": "/blog/"
-      }
-    },
-    {
-      "src": "^/blog/(.*)$",
-      "dest": "/posts/$1"
-    }
-  ]
+  "outputDirectory": "out"
 }
