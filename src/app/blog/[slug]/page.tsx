@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft } from 'lucide-react'
 import { GardenFooter } from '@/components/garden/GardenFooter'
+import { GardenHeader } from '@/components/garden/GardenHeader'
 import { getAllPosts, getPostBySlug } from '@/lib/blog'
 
 type BlogPostPageProps = {
@@ -42,32 +43,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className="min-h-screen">
-      <article className="mx-auto max-w-3xl px-5 py-10">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-bold text-garden-green">
-          <ArrowLeft aria-hidden="true" size={17} />
-          Blog
-        </Link>
-
-        <header className="mt-14 border-b border-garden-line pb-8">
-          <time dateTime={post.date} className="text-sm font-extrabold uppercase text-garden-green">
+    <main className="mx-auto min-h-screen w-full max-w-screen-sm bg-white px-8 font-sans text-neutral-900 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-2xl">
+      <GardenHeader />
+      <article className="mx-auto max-w-3xl">
+        <header className="garden-enter px-2 pb-10 pt-8 md:pt-12">
+          <Link
+            href="/blog"
+            className="mb-7 inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1.5 font-mono text-[0.7rem] font-medium uppercase tracking-[0.12em] text-neutral-500 transition-colors hover:bg-neutral-200 hover:text-neutral-900"
+          >
+            <span aria-hidden="true">←</span>
+            <span>Writing · Blog</span>
+          </Link>
+          <time dateTime={post.date} className="block font-mono text-[0.72rem] font-medium uppercase tracking-[0.14em] text-neutral-400">
             {dateFormatter.format(new Date(post.date))}
           </time>
-          <h1 className="mt-4 font-serif text-6xl font-bold leading-tight text-garden-ink max-md:text-4xl">
+          <h1 className="mt-5 font-serif text-[2.5rem] font-normal leading-[1.02] tracking-[-0.025em] text-neutral-900 md:text-[4rem] lg:text-[4.5rem]">
             {post.title}
           </h1>
-          {post.tags.length ? (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span key={tag} className="rounded-md bg-garden-tag px-3 py-1 text-xs font-bold text-garden-muted">
-                  #{tag}
+          {post.tags.length || post.categories.length ? (
+            <div className="mt-7 flex flex-wrap gap-1.5">
+              {[...post.categories, ...post.tags].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[0.7rem] font-medium text-neutral-600 ring-1 ring-inset ring-neutral-200"
+                >
+                  {tag}
                 </span>
               ))}
             </div>
           ) : null}
         </header>
 
-        <div className="prose-post mt-8" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+        <div className="garden-enter px-1 pb-2" style={{ '--garden-delay': '150ms' } as CSSProperties}>
+          <div className="rounded-2xl bg-neutral-50 px-5 py-8 sm:px-10 sm:py-12">
+            <div className="prose-post" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+          </div>
+        </div>
       </article>
       <GardenFooter />
     </main>

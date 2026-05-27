@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "design-of-everyday-things",
+    "title": "The Design of Everyday Things",
+    "openLibraryIsbn": "9780465050659"
+  },
+  {
+    "slug": "lean-startup",
+    "title": "The Lean Startup",
+    "openLibraryCoverId": "7104760"
+  },
+  {
+    "slug": "essentialism",
+    "title": "Essentialism",
+    "openLibraryCoverId": "7285986"
+  },
+  {
+    "slug": "atomic-habits",
+    "title": "Atomic Habits",
+    "openLibraryCoverId": "12539702"
+  },
+  {
+    "slug": "intelligent-investor",
+    "title": "The Intelligent Investor",
+    "openLibraryCoverId": "36434"
+  },
+  {
+    "slug": "psychology-of-money",
+    "title": "The Psychology of Money",
+    "openLibraryCoverId": "10389354"
+  },
+  {
+    "slug": "dont-make-me-think",
+    "title": "Don't Make Me Think",
+    "openLibraryCoverId": "554640"
+  },
+  {
+    "slug": "mom-test",
+    "title": "The Mom Test",
+    "openLibraryCoverId": "10660557"
+  },
+  {
+    "slug": "shape-up",
+    "title": "Shape Up",
+    "openLibraryCoverId": "12600273"
+  }
+]

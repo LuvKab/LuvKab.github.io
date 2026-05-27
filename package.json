@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "books:covers": "node scripts/fetch-book-covers.mjs",
     "prebuild": "node scripts/sync-blog-assets.mjs",
     "build": "next build",
     "start": "next start",
