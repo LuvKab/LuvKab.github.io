@@ -19,8 +19,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)'],
       },
       boxShadow: {
         soft: '0 18px 50px rgba(48, 38, 25, 0.08)',

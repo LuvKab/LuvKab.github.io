@@ -136,7 +136,7 @@ function ProjectTile({ tile, index }: { tile: GardenTile; index?: number }) {
               src={tile.image}
               alt={tile.imageAlt ?? ''}
               fill
-              loading="eager"
+              loading="lazy"
               sizes={tile.size === 'wide' ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 100vw'}
               style={mobileCoverImage ? { objectPosition: '35% 50%' } : undefined}
               className={clsx(coverImage ? 'object-cover' : tile.size === 'wide' ? 'object-cover sm:object-contain sm:object-bottom' : 'object-contain object-bottom')}
@@ -157,7 +157,7 @@ function PhotoTile({ tile, index }: { tile: GardenTile; index?: number }) {
             src={tile.image}
             alt={tile.imageAlt ?? ''}
             fill
-            loading="eager"
+            loading="lazy"
             sizes={tile.size === 'wide' ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 100vw'}
             className="pointer-events-none absolute h-full w-full rounded-xl object-cover transition-all duration-300 ease-out group-focus-within:scale-[1.03] group-hover:scale-[1.03]"
           />
@@ -196,7 +196,7 @@ function RevealTile({ tile, index }: { tile: GardenTile; index?: number }) {
           src={tile.image}
           alt={tile.imageAlt ?? ''}
           fill
-          loading="eager"
+          loading="lazy"
           sizes="(min-width: 1024px) 25vw, 100vw"
           className="pointer-events-none object-cover opacity-50 transition-all duration-300 ease-out group-focus-within:scale-[1.04] group-focus-within:opacity-100 group-hover:scale-[1.04] group-hover:opacity-100"
         />
